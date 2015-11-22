@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MP3ManagmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="PhotoUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Songs" Relationship="Self.fk_author" FromRole="Author" ToRole="Song" />
+  </EntityType>
+  <EntityType Name="Playlist">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreated" Type="DateTime" Precision="7" />
+    <NavigationProperty Name="Songs" Relationship="Self.PlaylistSongs" FromRole="Playlist" ToRole="Song" />
+  </EntityType>
+  <EntityType Name="Song">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SongUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AuthorID" Type="Int32" />
+    <NavigationProperty Name="Author" Relationship="Self.fk_author" FromRole="Song" ToRole="Author" />
+    <NavigationProperty Name="Playlists" Relationship="Self.PlaylistSongs" FromRole="Song" ToRole="Playlist" />
+  </EntityType>
+  <Association Name="fk_author">
+    <End Role="Author" Type="Self.Author" Multiplicity="0..1" />
+    <End Role="Song" Type="Self.Song" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Song">
+        <PropertyRef Name="AuthorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PlaylistSongs">
+    <End Role="Playlist" Type="Self.Playlist" Multiplicity="*" />
+    <End Role="Song" Type="Self.Song" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="MP3ManagmentEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Authors" EntityType="Self.Author" />
+    <EntitySet Name="Playlists" EntityType="Self.Playlist" />
+    <EntitySet Name="Songs" EntityType="Self.Song" />
+    <AssociationSet Name="fk_author" Association="Self.fk_author">
+      <End Role="Author" EntitySet="Authors" />
+      <End Role="Song" EntitySet="Songs" />
+    </AssociationSet>
+    <AssociationSet Name="PlaylistSongs" Association="Self.PlaylistSongs">
+      <End Role="Playlist" EntitySet="Playlists" />
+      <End Role="Song" EntitySet="Songs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

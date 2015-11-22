@@ -1,0 +1,12 @@
+c:\users\user\documents\visual studio 2013\Projects\MP3Manager\MP3Manager.Core\bin\Debug\MP3Manager.Core.dll
+c:\users\user\documents\visual studio 2013\Projects\MP3Manager\MP3Manager.Core\bin\Debug\MP3Manager.Core.pdb
+c:\users\user\documents\visual studio 2013\Projects\MP3Manager\MP3Manager.Core\bin\Debug\MP3Manager.Data.dll
+c:\users\user\documents\visual studio 2013\Projects\MP3Manager\MP3Manager.Core\bin\Debug\EntityFramework.dll
+c:\users\user\documents\visual studio 2013\Projects\MP3Manager\MP3Manager.Core\bin\Debug\MP3Manager.Data.pdb
+c:\users\user\documents\visual studio 2013\Projects\MP3Manager\MP3Manager.Core\bin\Debug\EntityFramework.xml
+c:\users\user\documents\visual studio 2013\Projects\MP3Manager\MP3Manager.Core\obj\Debug\MP3Manager.Core.dll
+c:\users\user\documents\visual studio 2013\Projects\MP3Manager\MP3Manager.Core\obj\Debug\MP3Manager.Core.pdb
+c:\users\user\documents\visual studio 2013\Projects\MP3Manager\MP3Manager.Core\bin\Debug\MP3Manager.Core.dll.config
+c:\users\user\documents\visual studio 2013\Projects\MP3Manager\MP3Manager.Core\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\user\documents\visual studio 2013\Projects\MP3Manager\MP3Manager.Core\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\user\documents\visual studio 2013\Projects\MP3Manager\MP3Manager.Core\obj\Debug\MP3Manager.Core.csprojResolveAssemblyReference.cache
